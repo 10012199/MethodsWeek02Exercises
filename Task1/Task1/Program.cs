@@ -11,41 +11,68 @@ namespace Task1
         static void Main(string[] args)
         {
 
-            int num1 = 0;
-            int num2 = 0;
-            
-            //MultiplyNumsTask1A(num1,num2);
-
+            int result = 0;
+                        
             Console.WriteLine("Enter first number:");
-            num1 = int.Parse(Console.ReadLine());
+            int num1 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter second number:");
-            num2 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
             
-            int result = Math.MultiplyNumsTask1B(num1,num2);
+            Console.WriteLine("Please choose the operation:");
+            Console.WriteLine("1 - Addition");
+            Console.WriteLine("2 - Subtraction");
+            Console.WriteLine("3 - Multiplication");
+            Console.WriteLine("4 - Division");
+            string operation = Console.ReadLine();
+        
+            switch (operation)
+            {
+                case "1":
+                    result = Math.Addition(num1,num2);
+                    Console.WriteLine("{0} + {1} = {2}", num1, num2, result);
+                    break;
 
-            Console.WriteLine("{0} x {1} = {2}", num1, num2, result);
-            Console.ReadLine();            
-        }
+                case "2":
+                    result = Math.Subtraction(num1,num2);
+                    Console.WriteLine("{0} - {1} = {2}", num1, num2, result);
+                    break;
+                
+                case "3":
+                    result = Math.Multiplication(num1,num2);
+                    Console.WriteLine("{0} x {1} = {2}", num1, num2, result);
+                    break;
 
-        /*static void MultiplyNumsTask1A(int num1, int num2)
-        {
+                 case "4":
+                    result = Math.Division(num1,num2);
+                    Console.WriteLine("{0} / {1} = {2}", num1, num2, result);
+                    break;
 
-            Console.WriteLine("Enter first number:");
-            num1 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter second number:");
-            num2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("{0} x {1} = {2}", num1, num2, (num1*num2));
+                default:
+                    Console.WriteLine("Invalid Option");
+                    break;
+            }
             Console.ReadLine();
-        } */       
+        }        
     }
+        
     public static class Math
     {
-        public static int MultiplyNumsTask1B(int num1, int num2)
+        public static int Addition(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+        public static int Subtraction(int num1, int num2)
+        {
+            return num1 - num2;
+        }
+        public static int Multiplication(int num1, int num2)
         {
             return num1 * num2;
+        }
+        public static int Division(int num1, int num2)
+        {
+            return num1 / num2;
         }
     }
 }
