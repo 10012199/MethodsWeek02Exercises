@@ -21,7 +21,7 @@ namespace JacobExample
                 fname = value;
             }
         }
-        //public int Fname { get; set; } -> prop <tab><tab>         
+        // Public int Fname { get; set; } -> prop <tab><tab>.        
 
         public FirstName (string _fname)
         {
