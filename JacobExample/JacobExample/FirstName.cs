@@ -8,7 +8,7 @@ namespace JacobExample
 {
     public class FirstName
     {
-        public string fname;
+        string fname;
 
         public string Fname
         {
